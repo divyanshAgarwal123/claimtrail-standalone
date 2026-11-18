@@ -1,0 +1,57 @@
+diff --git a/django/contrib/admin/static/admin/js/SelectFilter2.js b/django/contrib/admin/static/admin/js/SelectFilter2.js
+index 08d47fc..ca8dda6 100644
+--- a/django/contrib/admin/static/admin/js/SelectFilter2.js
++++ b/django/contrib/admin/static/admin/js/SelectFilter2.js
+@@ -71,6 +71,7 @@ Requires core.js and SelectBox.js.
+                 'button',
+                 selector_available,
+                 interpolate(gettext('Choose all %s'), [field_name]),
++                'type', 'button',
+                 'id', field_id + '_add_all',
+                 'class', 'selector-chooseall'
+             );
+@@ -82,6 +83,7 @@ Requires core.js and SelectBox.js.
+                 'button',
+                 quickElement('li', selector_chooser),
+                 interpolate(gettext('Choose selected %s'), [field_name]),
++                'type', 'button',
+                 'id', field_id + '_add',
+                 'class', 'selector-add'
+             );
+@@ -89,6 +91,7 @@ Requires core.js and SelectBox.js.
+                 'button',
+                 quickElement('li', selector_chooser),
+                 interpolate(gettext('Remove selected %s'), [field_name]),
++                'type', 'button',
+                 'id', field_id + '_remove',
+                 'class', 'selector-remove'
+             );
+@@ -141,6 +144,7 @@ Requires core.js and SelectBox.js.
+                 'button',
+                 selector_chosen,
+                 interpolate(gettext('Remove all %s'), [field_name]),
++                'type', 'button',
+                 'id', field_id + '_remove_all',
+                 'class', 'selector-clearall'
+             );
+diff --git a/js_tests/admin/SelectFilter2.test.js b/js_tests/admin/SelectFilter2.test.js
+index 8c1480d..7bcdb76 100644
+--- a/js_tests/admin/SelectFilter2.test.js
++++ b/js_tests/admin/SelectFilter2.test.js
+@@ -17,12 +17,16 @@ QUnit.test('init', function(assert) {
+     assert.equal($('.selector-chosen select')[0].getAttribute('multiple'), '');
+     assert.equal($('.selector-chooseall').text(), "Choose all things");
+     assert.equal($('.selector-chooseall').prop("tagName"), "BUTTON");
++    assert.equal($('.selector-chooseall').attr("type"), "button");
+     assert.equal($('.selector-add').text(), "Choose selected things");
+     assert.equal($('.selector-add').prop("tagName"), "BUTTON");
++    assert.equal($('.selector-add').attr("type"), "button");
+     assert.equal($('.selector-remove').text(), "Remove selected things");
+     assert.equal($('.selector-remove').prop("tagName"), "BUTTON");
++    assert.equal($('.selector-remove').attr("type"), "button");
+     assert.equal($('.selector-clearall').text(), "Remove all things");
+     assert.equal($('.selector-clearall').prop("tagName"), "BUTTON");
++    assert.equal($('.selector-clearall').attr("type"), "button");
+     assert.equal($('.selector-available .filtered').attr("aria-labelledby"), "id_from_title");
+     assert.equal($('.selector-available .selector-available-title label').text(), "Available things ");
+     assert.equal($('.selector-available .selector-available-title .helptext').text(), 'Choose things by selecting them and then select the "Choose" arrow button.');

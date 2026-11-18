@@ -1,0 +1,69 @@
+{
+  "pytest": {
+    "repository": "https://github.com/pytest-dev/pytest.git",
+    "tag": "8.4.2",
+    "revision": "bfae4224fd554d3d7f2c277a4cc092b6ec6af3ae",
+    "task": "https://github.com/pytest-dev/pytest/pull/13859",
+    "test_argv": [
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--deselect=testing/test_terminal.py::TestTerminalFunctional::test_header_trailer_info",
+      "testing/python",
+      "testing/code",
+      "testing/test_assertion.py",
+      "testing/test_assertrewrite.py",
+      "testing/test_terminal.py",
+      "testing/test_collection.py"
+    ],
+    "scope": [
+      "src",
+      "testing",
+      "pyproject.toml"
+    ],
+    "exclude": [
+      "__pycache__",
+      "**/__pycache__",
+      ".pytest_cache",
+      "**/.pytest_cache"
+    ],
+    "timeout_seconds": 240
+  },
+  "django": {
+    "repository": "https://github.com/django/django.git",
+    "tag": "5.2.1",
+    "revision": "bc833e8883db4a333a6485d91637b78c85e2b13b",
+    "task": "https://code.djangoproject.com/ticket/36423",
+    "test_argv": [
+      "-B",
+      "tests/runtests.py",
+      "--settings=test_sqlite",
+      "--parallel=1",
+      "--verbosity=1",
+      "admin_views",
+      "forms_tests",
+      "model_forms",
+      "model_fields",
+      "template_tests",
+      "migrations",
+      "schema",
+      "queries"
+    ],
+    "scope": [
+      "django",
+      "tests",
+      "js_tests",
+      "pyproject.toml"
+    ],
+    "exclude": [
+      "__pycache__",
+      "**/__pycache__",
+      ".pytest_cache",
+      "**/.pytest_cache"
+    ],
+    "timeout_seconds": 240
+  }
+}

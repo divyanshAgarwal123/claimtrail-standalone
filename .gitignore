@@ -1,0 +1,8 @@
+data/
+__pycache__/
+.pycache/
+*.pyc
+.tools/
+dist/
+.claimtrail/
+.codex/hooks.json

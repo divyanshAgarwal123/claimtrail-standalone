@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-18",
+  "platform": "macOS arm64",
+  "test_python": "3.13.17",
+  "codex_cli": "0.169.0-alpha.11.1",
+  "method": "Selected native suite, median of two fresh reruns on each final worktree. Estimated verification cost includes in-process capture overhead and native Stop verification.",
+  "cases": {
+    "pytest": {
+      "revision": "bfae4224fd554d3d7f2c277a4cc092b6ec6af3ae",
+      "changed_files": [
+        "src/_pytest/_code/code.py",
+        "src/_pytest/raises.py",
+        "testing/code/test_excinfo.py",
+        "testing/python/raises.py",
+        "testing/python/raises_group.py"
+      ],
+      "trigger": "Stop",
+      "action": "reused_receipt",
+      "status": "verified",
+      "native_reruns": [
+        {
+          "elapsed_seconds": 27.792325958998845,
+          "exit_code": 0
+        },
+        {
+          "elapsed_seconds": 28.543650084000546,
+          "exit_code": 0
+        }
+      ],
+      "native_median_seconds": 28.167988021499696,
+      "capture_overhead_seconds": 0.09278400000000175,
+      "stop_seconds": 0.024676,
+      "estimated_savings_seconds": 28.050528021499694,
+      "scoped_file_count": 259
+    },
+    "django": {
+      "revision": "bc833e8883db4a333a6485d91637b78c85e2b13b",
+      "changed_files": [
+        "django/contrib/admin/static/admin/js/SelectFilter2.js",
+        "js_tests/admin/SelectFilter2.test.js"
+      ],
+      "trigger": "Stop",
+      "action": "reused_receipt",
+      "status": "verified",
+      "native_reruns": [
+        {
+          "elapsed_seconds": 24.539501458002633,
+          "exit_code": 0
+        },
+        {
+          "elapsed_seconds": 24.685406999997213,
+          "exit_code": 0
+        }
+      ],
+      "native_median_seconds": 24.612454228999923,
+      "capture_overhead_seconds": 2.1953819999999986,
+      "stop_seconds": 0.5761,
+      "estimated_savings_seconds": 21.840972228999924,
+      "scoped_file_count": 6164
+    }
+  }
+}

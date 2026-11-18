@@ -1,0 +1,8 @@
+{
+  "check_id": "python.pytest",
+  "description": "Run the Python project's pytest suite",
+  "command": ["python3", "-B", "-m", "pytest", "-q", "-p", "no:cacheprovider"],
+  "scope": ["src", "tests", "pyproject.toml"],
+  "exclude": ["**/__pycache__", "**/.pytest_cache"],
+  "timeout_seconds": 120
+}

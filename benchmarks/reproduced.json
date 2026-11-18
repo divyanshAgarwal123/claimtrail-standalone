@@ -1,0 +1,28 @@
+[
+  {
+    "case": "pytest",
+    "revision": "bfae4224fd554d3d7f2c277a4cc092b6ec6af3ae",
+    "package_version": "8.4.2",
+    "native_seconds": [
+      27.03447016700011,
+      28.978701167001418
+    ],
+    "native_median_seconds": 28.006585667000763,
+    "capture_overhead_seconds": 0.12293808399979156,
+    "handoff_seconds": 0.07814341699850047,
+    "estimated_savings_seconds": 27.80550416600247
+  },
+  {
+    "case": "django",
+    "revision": "bc833e8883db4a333a6485d91637b78c85e2b13b",
+    "package_version": "5.2.1",
+    "native_seconds": [
+      24.341824374998396,
+      25.77098416700028
+    ],
+    "native_median_seconds": 25.056404270999337,
+    "capture_overhead_seconds": 2.020658334000384,
+    "handoff_seconds": 0.5920586249994813,
+    "estimated_savings_seconds": 22.443687311999472
+  }
+]
